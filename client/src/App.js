@@ -14,7 +14,7 @@ function App() {
   const SERVER_URL = "https://demo-back.vercel.app"
 
   useEffect(()=>{
-     Axios.get(SERVER_URL + "/read")
+     Axios.get(SERVER_URL + "/ead")
      .then((result)=>{
        setFoodList(result.data);
       })
