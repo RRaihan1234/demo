@@ -11,26 +11,23 @@ function App() {
   const [newFoodName,setNewFoodName] = useState('');
 
   /* const SERVER_URL = process.env.REACT_APP_SERVER_URL; */
-  const SERVER_URL = "https://demo-back.vercel.app"
+  /* const SERVER_URL = "https://demo-back.vercel.app" */
 
   useEffect(()=>{
-     Axios.get(SERVER_URL + "/read")
+     Axios.get(/* SERVER_URL */"https://demo-back.vercel.app/read")
      .then((result)=>{
        setFoodList(result.data);
       })
      .catch((err) => console.log(err.message))
-  },[SERVER_URL])
+  },[/* SERVER_URL */])
 
   const addToList = () =>{
-    Axios.post(SERVER_URL + "/insert",{
+    Axios.post("https://demo-back.vercel.app/insert",{
       foodName,
       days
     });
-    /* window.location.reload(); */
-    setTimeout(function(){ window.location.reload(); }, 2000);
-    /* for(let i = 0; i<=100; i++){
-      window.location.reload();
-    } */
+    
+    setTimeout(function(){ window.location.reload(); }, 100);
   }
 
   const food = (e) => {
@@ -46,23 +43,17 @@ function App() {
   }
 
   const updateFood = (id) => {
-    Axios.put(SERVER_URL + "/update",{
+    Axios.put("https://demo-back.vercel.app/update",{
       id:id,
       newFoodName
     })
-    /* window.location.reload(); */
-    setTimeout(function(){ window.location.reload(); }, 2000);
-    /* for(let i = 0; i<=100; i++){
-      window.location.reload();
-    } */
+    
+    setTimeout(function(){ window.location.reload(); }, 100);
   }
   const deleteFood = (id) =>{
-    Axios.delete(SERVER_URL + `/delete/${id}`)
-    /* window.location.reload(); */
-    setTimeout(function(){ window.location.reload(); }, 2000);
-    /* for(let i = 0; i<=100; i++){
-      window.location.reload();
-    } */
+    Axios.delete(`https://demo-back.vercel.app/delete/${id}`)
+
+    setTimeout(function(){ window.location.reload(); }, 100);
   }
 
   return (
