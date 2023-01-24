@@ -11,7 +11,7 @@ function App() {
   const [newFoodName,setNewFoodName] = useState('');
 
   /* const SERVER_URL = process.env.REACT_APP_SERVER_URL; */
-  const SERVER_URL = "https://demo-back.verce.app"
+  const SERVER_URL = "https://demo-back.vercel.app"
 
   useEffect(()=>{
      Axios.get(SERVER_URL + "/read")
