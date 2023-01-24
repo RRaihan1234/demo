@@ -13,7 +13,7 @@ function App() {
   const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
   useEffect(()=>{
-     Axios.get(SERVER_URL + "/r")
+     Axios.get(SERVER_URL + "/read")
      .then((result)=>{
        setFoodList(result.data);
       })
