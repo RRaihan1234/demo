@@ -27,7 +27,7 @@ function App() {
       days
     });
     
-    setTimeout(function(){ window.location.reload(); }, 500);
+    setTimeout(function(){ window.location.reload(); }, 1000);
   }
 
   const food = (e) => {
@@ -48,12 +48,12 @@ function App() {
       newFoodName
     })
     
-    setTimeout(function(){ window.location.reload(); }, 500);
+    setTimeout(function(){ window.location.reload(); }, 1000);
   }
   const deleteFood = (id) =>{
     Axios.delete(`https://demo-back.vercel.app/delete/${id}`)
 
-    setTimeout(function(){ window.location.reload(); }, 500);
+    setTimeout(function(){ window.location.reload(); }, 1000);
   }
 
   return (
